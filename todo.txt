@@ -1,0 +1,38 @@
+Laying out the page
+
+Header
+
+Sidebar with options to sort books
+- sort by read, reading, want to read
+- sort by rating
+
+main area 
+- bar with button opens modal to add new books
+- layout books in cards
+
+
+cards
+- title
+- author
+- user rating
+- read/not read/want to read (by default)
+- review
+- edit button
+
+modal 
+- click outside modal area but saves input
+- cancel
+- submit adds books-- only need title
+
+aint done a table for a while. 
+do a table 
+
+table displays all info from book cards 
+in actions field is a show button to show the card
+
+
+Next
+add aside for shelves
+add section above table
+add buttons right of nav bar
+basic styling
