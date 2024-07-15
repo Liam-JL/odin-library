@@ -148,6 +148,10 @@ nav  {
 
 /* make nav icons circle and contain svg images */
 
+.main__content-container {
+  padding-top: 4rem;
+}
+
 .main__content {
   display: grid;
   grid-template-areas: 
@@ -157,21 +161,49 @@ nav  {
   margin: 0px auto;
   width: 970px;
   text-align: left;
+  gap: 1.5rem;
 }
 
 .main__my-books-nav {
   grid-area: my-books-nav;
-  border: green 2px solid;
+}
+
+.main__my-books-nav-upper {
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .main__aside {
   grid-area: aside;
-  border: blue 2px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem
+} 
+
+.main__aside ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.main__aside li:first-child {
+ font-size: 1.1rem;
+ font-weight: bold;
+}
+
+.main__aside hr {
+  margin-top: 1rem;
+}
+
+.main__aside-bookshelves button {
+  margin-top: 0.5rem;
 }
 
 .main__table-container {
   grid-area: table;
-  border: red 2px solid;
+
 }
 
 
