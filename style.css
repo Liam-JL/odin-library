@@ -45,16 +45,134 @@ li {
   list-style-type: none;
 }
 
+/* Fonts */
+@font-face {
+  font-family: 'norsebold';
+  src: url('norse-bold_3-webfont.woff2') format('woff2'),
+       url('norse-bold_3-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'norse-webfont', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'norsebold-webfont', sans-serif;
+}
+
+/* Color Variables */
+:root {
+  --background-primary: rgb(255, 255, 255);
+  --background-secondary: rgb(244, 241, 234);
+  --background-tertiary: rgb(115, 33, 80);
+  --text-on-primary: rgb(0, 99, 93);
+  --header-on-primary: rgb(24, 24, 24);
+  --text-on-secondary: rgb(51, 51, 51);
+  --border-on-secondary: rgb(214, 208, 196);
+}
+
+.secondary{
+  background-color: var(--background-secondary);
+  color: var(--text-on-secondary);
+}
+
+.tertiary {
+  background-color: var(--background-tertiary);
+  color: var(--background-secondary);
+}
+
 
 /* Styles */
 html, body {
   font-size: 14px;
 }
 
+.page-container {
+  display: grid;
+  grid-template-rows: 1fr 4fr
+}
+
+.header{
+  display: grid;
+  grid-template-rows: 0.7fr 1fr
+}
+
+.header__upper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__lower{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav  {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 75%;
+  gap: 1rem;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__nav-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.header__search-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.header__search-bar {
+  flex-grow: 1;
+  padding: 0.2rem;
+}
 
 .header__search-icon {
   height: 2rem;
   width: auto;
 }
+
+/* make nav icons circle and contain svg images */
+
+.main__content {
+  display: grid;
+  grid-template-areas: 
+  "my-books-nav my-books-nav"
+  "aside table"
+  ;
+  margin: 0px auto;
+  width: 970px;
+  text-align: left;
+}
+
+.main__my-books-nav {
+  grid-area: my-books-nav;
+  border: green 2px solid;
+}
+
+.main__aside {
+  grid-area: aside;
+  border: blue 2px solid;
+}
+
+.main__table-container {
+  grid-area: table;
+  border: red 2px solid;
+}
+
 
 
