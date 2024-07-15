@@ -10,97 +10,111 @@
     <div class="page-container">
     
         <!-- Header and nav bar -->
-        <header>
-            <div class="logo">
-                <a href="#">odinreads</a>
+        <header class="header">
+            <div class="header__upper tertiary">
+                <p>This is a nice accent bar</p>
             </div>
-            <nav>
-                <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="#">Home</a></li>
-                    <li class="header__nav-item"> <a href="#">My Books</a></li>
-                    <li class="header__nav-item"> Browse</li>
-                    <li class="header__nav-item"> Community</li>
-                </ul>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="header__search-icon"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
-                <input type="text" class="header__search-bar">
-                <button class="header__nav-btn">Icon</button>
-                <button class="header__nav-btn">Icon</button>
-                <button class="header__nav-btn">Icon</button>
-                <button class="header__nav-btn">Icon</button>
-                <button class="header__nav-btn">Icon</button>
-            </nav>
+            <div class="header__lower secondary">
+                <nav style="border: 1px purple solid">
+
+                    <div class="logo">
+                        <a href="#"><h1>odinreads</h1></a>
+                    </div>
+
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item"><a href="#">Home</a></li>
+                        <li class="header__nav-item"> <a href="#">My Books</a></li>
+                        <li class="header__nav-item"> Browse</li>
+                        <li class="header__nav-item"> Community</li>
+                    </ul>
+
+                    <div class="header__search-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="header__search-icon"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+                        <input type="text" class="header__search-bar">
+                    </div>
+
+                    <ul class="header__nav-icons">
+                        <li><button class="header__nav-btn">Icon</button></li>
+                        <li><button class="header__nav-btn">Icon</button></li>
+                        <li><button class="header__nav-btn">Icon</button></li>
+                        <li><button class="header__nav-btn">Icon</button></li>
+                        <li><button class="header__nav-btn">Icon</button></li>
+                    </ul>
+
+                </nav>
+            </div>
         </header>
     
     
-        <main>
+        <main class="main__content-container">
             <!-- Upper part of main area -->
-            <div class="main__my-books-nav">
-                <a href="#">My Books</a>
-                <button class="main__add-btn">Add Book</button>
-                <hr>
-            </div>
-    
-            <!-- Left side of main area -->
-            <aside class="main__aside">
-                <div class="main__aside-bookshelves">
-                    <ul>
-                        <li>Bookshelves (<a href="#">Edit</a>)</li>
-                        <li><a href="#" id="aside__all-link">All (#)</a></li>
-                        <li><a href="#" id="aside__read-link">Read (#)</a></li>
-                        <li><a href="#" id="aside__currently-reading-link">Currently Reading (#)</a></li>
-                        <li><a href="#" id="aside__want-to-read-link"></a></li>
-                        <li><button>Add shelf</button></li>
-                    </ul>
+            <div class="main__content">
+                <div class="main__my-books-nav">
+                    <a href="#">My Books</a>
+                    <button class="main__add-btn">Add Book</button>
                     <hr>
                 </div>
-                <div class="aside__your-reading-activity">
-                    <ul>
-                        <li>Your reading activity</li>
-                        <li><a href="#">Review Drafts</a></li>
-                        <li><a href="#">Notes and Highlights</a></li>
-                        <li><a href="#">Reading Challenge</a></li>
-                        <li><a href="#">Year in Books</a></li>
-                        <li><a href="#">Reading stats</a></li>
-                    </ul>
+                <!-- Left side of main area -->
+                <aside class="main__aside">
+                    <div class="main__aside-bookshelves">
+                        <ul>
+                            <li>Bookshelves (<a href="#">Edit</a>)</li>
+                            <li><a href="#" id="aside__all-link">All (#)</a></li>
+                            <li><a href="#" id="aside__read-link">Read (#)</a></li>
+                            <li><a href="#" id="aside__currently-reading-link">Currently Reading (#)</a></li>
+                            <li><a href="#" id="aside__want-to-read-link"></a></li>
+                            <li><button>Add shelf</button></li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="aside__your-reading-activity">
+                        <ul>
+                            <li>Your reading activity</li>
+                            <li><a href="#">Review Drafts</a></li>
+                            <li><a href="#">Notes and Highlights</a></li>
+                            <li><a href="#">Reading Challenge</a></li>
+                            <li><a href="#">Year in Books</a></li>
+                            <li><a href="#">Reading stats</a></li>
+                        </ul>
+                    </div>
+                    <div class="aside__add-books">
+                        <ul>
+                            <li>Add books</li>
+                            <li><a href="#">Amazon book purchases</a></li>
+                            <li><a href="#">Recommendations</a></li>
+                            <li><a href="#">Explore</a></li>
+                        </ul>
+                    </div>
+                    <div class="aside__tools">
+                        <li>Tools</li>
+                        <li><a href="#">Find duplicates</a></li>
+                        <li><a href="#">Widgets</a></li>
+                        <li><a href="#">Import and export</a></li>
+                    </div>
+                </aside>
+                <!-- Table Area -->
+                <div class="main__table-container">
+                    <table id="books-table" class="main__books-table">
+                        <thead>
+                            <th alt="title" class="table-header main__header-title">Title</th>
+                            <th alt="author" class="table-header main__header-author">Author</th>
+                            <th alt="user-rating" class="table-header main__header-title">User Rating</th>
+                            <th alt="shelf" class="table-header main__header-author">Shelf</th>
+                            <th alt="review" class="table-header main__header-title">Review</th>
+                            <th alt="actions" class="table-header main__header-author"></th>
+                        </thead>
+                        <tbody>
+                            <tr class="table-row example-review">
+                                <td class="field row-title">The Example</td>
+                                <td class="field row-author">Example Smith</td>
+                                <td class="field row-rating">Stars</td>
+                                <td class="field row-shelf">Read</td>
+                                <td class="field row-review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus molestias beatae rerum illum ratione. Delectus soluta quis nostrum ea explicabo laborum fugiat neque voluptas eos et. Quaerat odit placeat nihil.</td>
+                                <td class="field row-actions">Action buttons</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="aside__add-books">
-                    <ul>
-                        <li>Add books</li>
-                        <li><a href="#">Amazon book purchases</a></li>
-                        <li><a href="#">Recommendations</a></li>
-                        <li><a href="#">Explore</a></li>
-                    </ul>
-                </div>
-                <div class="aside__tools">
-                    <li>Tools</li>
-                    <li><a href="#">Find duplicates</a></li>
-                    <li><a href="#">Widgets</a></li>
-                    <li><a href="#">Import and export</a></li>
-                </div>
-            </aside>
-    
-            <!-- Table Area -->
-            <div class="main__table-container">
-                <table id="books-table" class="main__books-table">
-                    <thead>
-                        <th alt="title" class="table-header main__header-title">Title</th>
-                        <th alt="author" class="table-header main__header-author">Author</th>
-                        <th alt="user-rating" class="table-header main__header-title">User Rating</th>
-                        <th alt="shelf" class="table-header main__header-author">Shelf</th>
-                        <th alt="review" class="table-header main__header-title">Review</th>
-                        <th alt="actions" class="table-header main__header-author"></th>
-                    </thead>
-                    <tbody>
-                        <tr class="table-row example-review">
-                            <td class="field row-title">The Example</td>
-                            <td class="field row-author">Example Smith</td>
-                            <td class="field row-rating">Stars</td>
-                            <td class="field row-shelf">Read</td>
-                            <td class="field row-review">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus molestias beatae rerum illum ratione. Delectus soluta quis nostrum ea explicabo laborum fugiat neque voluptas eos et. Quaerat odit placeat nihil.</td>
-                            <td class="field row-actions">Action buttons</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
         </main>
 </div>

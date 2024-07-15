@@ -32,7 +32,4 @@ in actions field is a show button to show the card
 
 
 Next
-add aside for shelves
-add section above table
-add buttons right of nav bar
 basic styling
