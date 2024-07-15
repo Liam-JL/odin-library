@@ -203,8 +203,22 @@ nav  {
 
 .main__table-container {
   grid-area: table;
-
 }
 
+.main__books-table {
+  border-collapse: collapse;
+}
 
+.main__books-table thead th { 
+  font-size: 0.9rem; 
+  font-weight: bold;
+  border-bottom: 1px solid grey;
+  padding-bottom: 0.5rem;
+}
+
+td { 
+  padding: 0.4rem;
+}
+
+/* Need to space out cells next */
 
