@@ -1,4 +1,5 @@
 function Book(title, author, userRating, shelf, review) {
+    this.id = Math.random().toString(16).slice(2)
     this.title = title;
     this.author = author;
     this.userRating = userRating;
@@ -11,7 +12,7 @@ function Book(title, author, userRating, shelf, review) {
         newRow.classList.add("table-row");
         newRow.setAttribute("id", `${this[title]}-review`)
         for(let key of Object.keys(this)){
-            if(typeof(this[key]) !== "function"){
+            if(typeof(this[key]) !== "function" && this[key] !== this.id){
                 let newField = document.createElement("td");
                 newField.classList.add("field");
                 newField.textContent = this[key];
@@ -22,6 +23,9 @@ function Book(title, author, userRating, shelf, review) {
     }
     this.deleteRow = function() {
         //Removes this book from row on the table
+        const booksTable = document.getElementById("books-table");
+        const thisRow = document.getElementById(`${this.title}-review`);
+        booksTable.removeChild(thisRow);
     }
 }
 
@@ -46,6 +50,5 @@ const example2 = new Book(
 myLibrary.push(example1, example2);
 
 for(let book of myLibrary){
-    book.addRow()
+    book.addRow();
 }
-
