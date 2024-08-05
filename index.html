@@ -125,8 +125,32 @@
             </div>
 
             <dialog class="main__add-book-modal" id="add-book-modal">
-                <h2 class="main__modal-title">Add book to your library</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur minus voluptates recusandae pariatur debitis amet dolores nisi. Sit officia neque saepe dolores distinctio ab, consequuntur praesentium minima molestias minus ea!</p>
+                <div class="main__modal-wrapper">
+                    <h2 class="main__modal-title">Add book to your library</h2>
+                    <form class="main__add-book-form" id="add-book-form">
+                        <label for="title-input" class="main__form-label title-input">Book title:
+                            <br>
+                            <input type="text" name="book-title" class="main__form-input">
+                        </label>
+                        <label for="author-input" class="main__form-label author-input">Author:
+                            <br>
+                            <input type="text" name="author" class="main__form-input">
+                        </label>
+                        <label for="rating-input" class="main__form-label rating-input">Rating:
+                            <br>
+                            <input type="number" name="rating-input" class="main__form-input">
+                        </label>
+                        <label for="shelf-input" class="main__form-label shelf-input">Shelf:
+                            <br>
+                            <input type="text" name="shelf-input" class="main__form-input">
+                        </label>
+                        <label for="review-input" class="main__form-label review-input">My review:
+                            <br>
+                            <textarea name="review-input" class="main__form-input main__review-input"></textarea>
+                        </label>
+                        <button type="submit" class="main__modal-submit-btn secondary">Add Book</button>
+                    </form>
+                </div>
             </dialog>
 
         </main>
