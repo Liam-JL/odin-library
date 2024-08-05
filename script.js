@@ -52,3 +52,11 @@ myLibrary.push(example1, example2);
 for(let book of myLibrary){
     book.addRow();
 }
+
+const addBookBtn = document.getElementById("add-book-btn");
+const addBookModal = document.querySelector("#add-book-modal")
+addBookBtn.addEventListener("click", () => {
+    addBookModal.showModal();
+});
+
+
