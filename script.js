@@ -59,4 +59,9 @@ addBookBtn.addEventListener("click", () => {
     addBookModal.showModal();
 });
 
+const modalCloseBtn = document.querySelector("#modal-close-btn");
+modalCloseBtn.addEventListener("click", () => {
+    addBookModal.close();
+})
+
 
