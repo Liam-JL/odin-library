@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <div class="page-container">
-    
         <!-- Header and nav bar -->
         <header class="header">
             <div class="header__upper tertiary">
@@ -124,36 +124,39 @@
                 </div>
             </div>
 
-            <dialog class="main__add-book-modal" id="add-book-modal">
-                <div class="main__modal-wrapper">
-                    <h2 class="main__modal-title">Add book to your library</h2>
-                    <form class="main__add-book-form" id="add-book-form">
-                        <label for="title-input" class="main__form-label title-input">Book title:
-                            <br>
-                            <input type="text" name="book-title" class="main__form-input">
-                        </label>
-                        <label for="author-input" class="main__form-label author-input">Author:
-                            <br>
-                            <input type="text" name="author" class="main__form-input">
-                        </label>
-                        <label for="rating-input" class="main__form-label rating-input">Rating:
-                            <br>
-                            <input type="number" name="rating-input" class="main__form-input">
-                        </label>
-                        <label for="shelf-input" class="main__form-label shelf-input">Shelf:
-                            <br>
-                            <input type="text" name="shelf-input" class="main__form-input">
-                        </label>
-                        <label for="review-input" class="main__form-label review-input">My review:
-                            <br>
-                            <textarea name="review-input" class="main__form-input main__review-input"></textarea>
-                        </label>
-                        <button type="submit" class="main__modal-submit-btn secondary">Add Book</button>
-                    </form>
-                </div>
-            </dialog>
-
+            
         </main>
+        <dialog class="modal__add-book" id="add-book-modal">
+            <button class="modal__close-btn secondary" id="modal-close-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+            </button>
+            <div class="modal__wrapper">
+                <h2 class="modal__title">Add book to your library</h2>
+                <form class="modal__add-book-form" id="add-book-form">
+                    <label for="title-input" class="modal__form-label title-input">Book title:
+                        <br>
+                        <input type="text" name="book-title" class="modal__form-input">
+                    </label>
+                    <label for="author-input" class="modal__form-label author-input">Author:
+                        <br>
+                        <input type="text" name="author" class="modal__form-input">
+                    </label>
+                    <label for="rating-input" class="modal__form-label rating-input">Rating:
+                        <br>
+                        <input type="number" name="rating-input" class="modal__form-input">
+                    </label>
+                    <label for="shelf-input" class="modal__form-label shelf-input">Shelf:
+                        <br>
+                        <input type="text" name="shelf-input" class="modal__form-input">
+                    </label>
+                    <label for="review-input" class="modal__form-label review-input">My review:
+                        <br>
+                        <textarea name="review-input" class="modal__form-input modal__review-input"></textarea>
+                    </label>
+                    <button type="submit" class="modal__submit-btn secondary">Add Book</button>
+                </form>
+            </div>
+        </dialog>
 </div>
 </body>
 </html>

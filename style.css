@@ -227,26 +227,47 @@ td {
 /* Need to space out cells next */
 
 
-.main__add-book-modal {
+.modal__add-book {
   gap: 1.5rem;
   padding: 2rem;
   margin: auto;
   border: 0;
   box-shadow: 0 0 1em rgb(0 0 0 / .3);
   border-radius: 10px;
+  position: relative;
 }
 
-.main__add-book-modal::backdrop {
+.modal__add-book::backdrop {
   background: rgb(0 0 0 / .4);
 }
 
-.main__modal-wrapper {
+.modal__close-btn {
+  border: none;
+  border-radius: 100%;
+  padding: 0.1rem;
+  width: 1.3rem;
+  height: auto;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.modal__close-btn:hover {
+  background-color: var(--text-on-secondary);
+}
+
+.modal__close-btn > svg:hover {
+  fill: var(--background-secondary);
+}
+
+
+.modal__wrapper {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.main__add-book-form {
+.modal__add-book-form {
   display: grid;
   grid-template-areas: 
     "title author"
@@ -279,12 +300,12 @@ td {
   grid-area: review;
 }
 
-.main__review-input {
-  width: 25vw;
+.modal__review-input {
+  min-width: 25vw;
   height: 25vh;
 }
 
-.main__modal-submit-btn {
+.modal__submit-btn {
   grid-area: submit-btn;
   width: 8rem;
   justify-self: end;
@@ -293,29 +314,23 @@ td {
   border: var(--border-on-secondary);
 }
 
-.main__modal-submit-btn:hover {
+.modal__submit-btn:hover {
   cursor: pointer;
   background-color: var(--text-on-secondary);
   color: var(--background-secondary)
 }
 
-.main__form-input {
+.modal__form-input {
   width: 100%;
   padding: 0.2rem;
 }
 
-.main__form-label {
+.modal__form-label {
   font-weight: bold;
   font-size: 0.9rem;
 }
 
-.main__modal-title {
+.modal__title {
   font-weight: bold;
   font-size: 1.2rem;
 }
-
-
-
-
-
-
