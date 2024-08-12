@@ -132,28 +132,28 @@
             </button>
             <div class="modal__wrapper">
                 <h2 class="modal__title">Add book to your library</h2>
-                <form class="modal__add-book-form" id="add-book-form">
+                <form class="modal__add-book-form" id="add-book-form" method="modal">
                     <label for="title-input" class="modal__form-label title-input">Book title:
                         <br>
-                        <input type="text" name="book-title" class="modal__form-input">
+                        <input type="text" name="book-title" class="modal__form-input" id="book-title-input" required>
                     </label>
                     <label for="author-input" class="modal__form-label author-input">Author:
                         <br>
-                        <input type="text" name="author" class="modal__form-input">
+                        <input type="text" name="author" class="modal__form-input" required>
                     </label>
                     <label for="rating-input" class="modal__form-label rating-input">Rating:
                         <br>
-                        <input type="number" name="rating-input" class="modal__form-input">
+                        <input type="number" name="rating-input" class="modal__form-input" required>
                     </label>
                     <label for="shelf-input" class="modal__form-label shelf-input">Shelf:
                         <br>
-                        <input type="text" name="shelf-input" class="modal__form-input">
+                        <input type="text" name="shelf-input" class="modal__form-input" required>
                     </label>
                     <label for="review-input" class="modal__form-label review-input">My review:
                         <br>
                         <textarea name="review-input" class="modal__form-input modal__review-input"></textarea>
                     </label>
-                    <button type="submit" class="modal__submit-btn secondary">Add Book</button>
+                    <input type="submit" value="Add Book" class="modal__submit-btn secondary" id="modal-submit-btn">
                 </form>
             </div>
         </dialog>
