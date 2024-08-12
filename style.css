@@ -224,6 +224,21 @@ td {
   max-width: 15rem;
 }
 
+.main__row-delete{
+  background-image: url(Images/close.svg);
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+
+.table-action-btn {
+  border: none;
+  background-color: transparent;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+}
+
+
 /* Need to space out cells next */
 
 

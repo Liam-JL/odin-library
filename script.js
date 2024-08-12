@@ -5,20 +5,39 @@ function Book(title, author, userRating, shelf, review) {
     this.userRating = userRating;
     this.shelf = shelf;
     this.review = review;
+    this.createActionBtns = function(row) {
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("main__row-delete", "table-action-btn")
+
+        const editButton = document.createElement("button");
+        editButton.classList.add("main__row-edit", "table-action-btn")
+        editButton.textContent = "Edit";
+
+        let buttonField = document.createElement("td");
+        buttonField.classList.add("field");
+
+        buttonField.appendChild(deleteButton);
+        buttonField.appendChild(editButton);
+
+        row.appendChild(buttonField);
+    }
     this.addRow = function() {
         //Grabs table from document and adds contents of this book as a new row
         const booksTable = document.getElementById("books-table");
         const newRow = document.createElement("tr");
         newRow.classList.add("table-row");
-        newRow.setAttribute("id", `${this[title]}-review`)
+        newRow.setAttribute("id", `${this.title}-review`)
         for(let key of Object.keys(this)){
-            if(typeof(this[key]) !== "function" && this[key] !== this.id){
-                let newField = document.createElement("td");
-                newField.classList.add("field");
+            if(typeof(this[key]) !== "function" && 
+                this[key] !== this.id){
+                    let newField = document.createElement("td");
+                    newField.classList.add("field");
                 newField.textContent = this[key];
                 newRow.appendChild(newField);
             }
         }
+        
+        this.createActionBtns(newRow);
         booksTable.appendChild(newRow);
     }
     this.deleteRow = function() {
