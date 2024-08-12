@@ -64,4 +64,16 @@ modalCloseBtn.addEventListener("click", () => {
     addBookModal.close();
 })
 
+const addBookForm = document.querySelector("#add-book-form");
+addBookForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    inputValues = []
+    const inputFields = document.querySelectorAll(".modal__form-input");
+    inputFields.forEach((inputField) => {
+        inputValues.push(inputField.value);
+    })
+    addedBook = new Book(...inputValues);
+    addedBook.addRow();
+    addBookModal.close();
+})
 

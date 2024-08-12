@@ -260,7 +260,6 @@ td {
   fill: var(--background-secondary);
 }
 
-
 .modal__wrapper {
   display: flex;
   flex-direction: column;
