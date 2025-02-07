@@ -1,35 +1,52 @@
-Laying out the page
+1.Define core functionality
+- The app should store details of books in a list of display cards
+- The UI should have buttons to add a book
+- New book added via a modal
+- The display cards should have a remove button and a confirmation message if clicked accidendily
+- User should be able to categorise books by assigning them a shelf
+- user should be able to create and delete their own shelves
+- user should be able to filter current display cards by shelves
 
-Header
+2. Model
+- stores book objects
+    - book objects include data:
+        - title
+        - author
+        - user rating
+        - shelf
+        - review
+- stores shelves defined by user
+    - default shelves are:
+        - all
+        - finished
+3. View
+- Nav bar
+- container for cards (book cards are classes)
+- card(s) representing books
+- confirmation to delete modal when delete clicked on card
+- add books button
+- add books modal 
+- shelves container
+    - shelf items - filter cards when clicked (shelf buttons can be classes)
+- remove filter button
+- add shelf button
+- remove sheves button 
+    - shows x buttons next to each shelf item
+- confirmation modal for delete shelf
 
-Sidebar with options to sort books
-- sort by read, reading, want to read
-- sort by rating
+4. Controller
+model manages state
+- notifies view when changes occur
+view handles UI updates
+- binds UI events
+Controller handles user actions
+    - listens to button clicks
+    - calls model methods to add shelves, books, remove books, or remove shelves
 
-main area 
-- bar with button opens modal to add new books
-- layout books in cards
+Written as a proof of concept to implement classes in JS. 
 
-
-cards
-- title
-- author
-- user rating
-- read/not read/want to read (by default)
-- review
-- edit button
-
-modal 
-- click outside modal area but saves input
-- cancel
-- submit adds books-- only need title
-
-aint done a table for a while. 
-do a table 
-
-table displays all info from book cards 
-in actions field is a show button to show the card
+(draw the layout first)
 
 
-Next
-basic styling
+
+
