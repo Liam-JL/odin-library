@@ -127,7 +127,7 @@ body {
 .nav__search-wrapper {
   display: flex;
   flex-grow: 1;
-  min-width: 70vw;
+  max-width: 60vw;
 }
 
 .nav__search-bar {
@@ -246,12 +246,28 @@ body {
   }
 
   .sidebar {
-    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: var(--background-secondary);
+    color: var(--text-on-secondary);
+    width: 250px;
+    height: 100vh;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    left: 0
+  }
+
+  .sidebar-right {
+    display: block;
   }
 
   .main__card-list {
     grid-template-columns: 1fr;
   }
+
 
 }
 
