@@ -1,7 +1,19 @@
+class Book {
+    constructor(title, author, shelf = "All Shelves", rating = 0, review) {
+        this.title = title;
+        this.author = author;
+        this.shelf = shelf;
+        this.rating = rating;
+        this.review = review;
+    }
+}
+
 class Model {
     constructor() {
         this.shelves = ["All Shelves", "Finished"]
+        this.books = [];
     }
+
 }
 
 class View {
@@ -10,6 +22,9 @@ class View {
         this.sidebarBtn = document.getElementById("sidebarBtn");
         this.sidebar = document.getElementById("sidebar");
         this.sidebarCloseBtn = document.getElementById("sidebarCloseBtn");
+        this.addBooksBtn = document.getElementById("addBooksBtn");
+        this.addModal = document.getElementById("addModal");
+        this.addModalCloseBtn = document.getElementById("addModalCloseBtn");
     }
 
     onSidebarBtn(handler) {
@@ -18,6 +33,14 @@ class View {
 
     onSidebarCloseBtn(handler) {
         this.sidebarCloseBtn.addEventListener("click", handler);
+    }
+
+    onAddBooksBtn(handler) {
+        this.addBooksBtn.addEventListener("click", handler);
+    }
+
+    onAddModalCloseBtn(handler) {
+        this.addModalCloseBtn.addEventListener("click", handler);
     }
 }
 
@@ -29,7 +52,8 @@ class Controller {
         //Bind UI Events
         this.view.onSidebarBtn(this.handleSidebarBtn.bind(this));
         this.view.onSidebarCloseBtn(this.handleSidebarCloseBtn.bind(this));
-
+        this.view.onAddBooksBtn(this.handleAddBooksBtn.bind(this));
+        this.view.onAddModalCloseBtn(this.handleAddModalCloseBtn.bind(this));
 
         //Add Listeners
     }
@@ -41,6 +65,14 @@ class Controller {
 
     handleSidebarCloseBtn() {
         this.view.sidebar.classList.remove("active");
+    }
+
+    handleAddBooksBtn() {
+        this.view.addModal.showModal(); 
+    }
+
+    handleAddModalCloseBtn() {
+        this.view.addModal.close();
     }
 
 }
