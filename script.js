@@ -69,9 +69,11 @@ class Controller {
 
     handleAddBooksBtn() {
         this.view.addModal.showModal(); 
+        //Add all shelf options to shelf select element
     }
 
     handleAddModalCloseBtn() {
+        console.log("modal close button clicked")
         this.view.addModal.close();
     }
 
