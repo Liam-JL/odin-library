@@ -86,25 +86,47 @@
                 </div>
                 <div class="shelf-item">Shelf</div>
                 <div class="card__rating">*****</div>
-                <button class="card__review-btn">Add Review</button>
+                <button class="card__review-btn">My Review</button>
             </div>
         </section>
 
         <dialog id="addModal" class="add-modal">
-            <button id="addModalCloseBtn" class="add-modal__btn add-modal__btn--close">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-                  </svg>
-            </button>
-            <h2 class="add-modal__title">Add a book to your library</h2>
-            <form id="addBookForm" class="add-modal__form" method="modal">
-                <label for="book-title" class="add-modal__label add-modal__label--title">
-                    <br>
-                    <input type="text" name="book-title" id="titleInput" class="add-modal__form-input" required>
-                </label>
-            </form>
-
+            <div class="add-modal__content-wrapper">
+                <h2 class="add-modal__title">Add a book to your library</h2>
+                <button id="addModalCloseBtn" class="add-modal__btn add-modal__btn--close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+                      </svg>
+                </button>
+                <form id="addBookForm" class="add-modal__form" method="modal">
+                    <label for="book-title" class="add-modal__label add-modal__label--title">Book title:
+                        <br>
+                        <input type="text" name="book-title" id="titleInput" class="add-modal__form-input" required>
+                    </label>
+                    <label for="book-author" class="add-modal__label add-modal__label--author">Author:
+                        <br>
+                        <input type="text" name="book-author" id="auhtorInput" class="add-modal__form-input" required>
+                    </label>
+                    <label for="book-shelf" class="add-modal__label add-modal__label--shelf">Shelf:
+                        <br>
+                        <select name="book-shelf" id="book-shelf" class="add-modal__form-input">
+                            <option value="All Shelves">All Shelves</option>
+                            <option value="Finished">Finished</option>
+                            <!-- Add more options in script -->
+                        </select>
+                    </label>
+                    <label for="book-rating" class="add-modal__label add-modal__label--rating">Rating:
+                        <br>
+                        <input type="number" name="book-rating" max="5" min="1" class="add-modal__form-input">
+                    </label>
+                    <label for="book-review" class="add-modal__label add-modal__label--review">My Review:
+                        <br>
+                        <textarea name="book-review" id="book-review" class="add-modal__form-input add-modal__form-input--review"></textarea>
+                    </label>
+                    <input type="submit" value="Add Book" id="addModalSubmitBtn" class="add-modal__submit-btn">
+                </form>
+            </div>
         </dialog>
 
 
