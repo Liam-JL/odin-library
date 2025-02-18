@@ -9,11 +9,22 @@ class Book {
 }
 
 class Model {
+    #listeners = new Set();
     #shelves = [];
     #books = [];
 
     constructor() {
-        this.#shelves = ["All Shelves", "Finished"]
+        this.#shelves = ["All Shelves", "Finished"];
+    }
+
+    #notifyListeners() {
+        for (const listener of this.#listeners) {
+            listener(this);
+        }
+    }
+
+    addListener(listener) {
+        this.#listeners.push(listener);
     }
 
     addShelf(shelf) {
@@ -25,7 +36,8 @@ class Model {
     }
 
     addBook(book) {
-        this.#books.push(book)
+        this.#books.push(book);
+        this.#notifyListeners();
     }
 
     getBooks() {
@@ -46,9 +58,17 @@ class View {
         this.addBooksBtn = document.getElementById("addBooksBtn");
         this.addModal = document.getElementById("addModal");
         this.addModalCloseBtn = document.getElementById("addModalCloseBtn");
-        this.addModalSubmitBtn = document.getElementById("addModalSubmitBtn");
         this.addBookForm = document.getElementById("addBookForm");
-        this.formInputFields = document.querySelectorAll(".add-modal__form-input")
+        this.formInputFields = document.querySelectorAll(".add-modal__form-input");
+        this.cardList = document.getElementById("cardList");
+    }
+
+    //Create DOM object for static rendering
+    createCard(book) {
+    }
+
+    renderCards(){
+
     }
 
     onSidebarBtn(handler) {
@@ -67,10 +87,6 @@ class View {
         this.addModalCloseBtn.addEventListener("click", handler);
     }
 
-    onAddModalSubmitBtn(handler) {
-        this.addModalSubmitBtn.addEventListener("click", handler);
-    }
-
     onAddBookFormSubmit(handler) {
         this.addBookForm.addEventListener("submit", handler);
     }
@@ -86,7 +102,6 @@ class Controller {
         this.view.onSidebarCloseBtn(this.handleSidebarCloseBtn.bind(this));
         this.view.onAddBooksBtn(this.handleAddBooksBtn.bind(this));
         this.view.onAddModalCloseBtn(this.handleAddModalCloseBtn.bind(this));
-        this.view.onAddModalSubmitBtn(this.handleAddModalSubmitBtn.bind(this));
         this.view.onAddBookFormSubmit(this.handleAddBookFormSubmit.bind(this));
 
         //Add Listeners
@@ -110,19 +125,14 @@ class Controller {
         this.view.addModal.close();
     }
 
-    handleAddModalSubmitBtn() {
-        console.log("Modal Submit Button clicked")
-    }
-
     handleAddBookFormSubmit(event) {
         event.preventDefault();
         let inputValues = [];
         [...this.view.formInputFields].forEach((field) => {inputValues.push(field.value)});
         const newBook = new Book(...inputValues);
         this.model.addBook(newBook);
+        this.view.addModal.close();
     }
-
-
 
 }
 
