@@ -24,7 +24,7 @@ class Model {
     }
 
     addListener(listener) {
-        this.#listeners.push(listener);
+        this.#listeners.add(listener);
     }
 
     addShelf(shelf) {
@@ -44,9 +44,6 @@ class Model {
         return [...this.#books];
     }
 
-
-
-
 }
 
 class View {
@@ -65,10 +62,73 @@ class View {
 
     //Create DOM object for static rendering
     createCard(book) {
+        const card = document.createElement("div");
+        card.classList.add("card");
+
+        //Card Header
+        const cardHeader = document.createElement("div");
+        cardHeader.classList.add("card__header");
+
+        const cardTitle = document.createElement("h2");
+        cardTitle.classList.add("card__title");
+        cardTitle.textContent = book.title;
+
+        // Assemble the header
+        cardHeader.appendChild(cardTitle);
+        card.appendChild(cardHeader);
+
+        //Author info row
+        const authorInfoRow = document.createElement("div");
+        authorInfoRow.classList.add("card__author-info-row");
+
+        const authorLabel = document.createElement("span");
+        authorLabel.classList.add("card__author-label");
+        authorLabel.textContent = "Author:";
+
+        const author = document.createElement("span");
+        author.classList.add("card__author");
+        author.textContent = book.author;
+
+        //Assemble author row
+        authorInfoRow.appendChild(authorLabel);
+        authorInfoRow.appendChild(author);
+        card.appendChild(authorInfoRow);
+
+        //shelf
+        const shelf = document.createElement("div");
+        shelf.classList.add("shelf-item");
+        shelf.textContent = book.shelf;
+
+        //Append shelf
+        card.appendChild(shelf);
+
+        //Rating
+        const rating = document.createElement("div");
+        rating.classList.add("card__rating");
+        const stars = "*".repeat(book.rating); //TODO implement cleaner looking stars
+        rating.textContent = stars;
+
+        //Append rating
+        card.appendChild(rating);
+
+        //Review //TODO implement button opens user review
+        // const review = book.review;
+        const reviewBtn = document.createElement("btn");
+        reviewBtn.classList.add("card__review-btn");
+        reviewBtn.textContent = "My Review";
+
+        //Append review
+        card.appendChild(reviewBtn);
+
+        return card;
     }
 
-    renderCards(){
-
+    renderCards(model){
+        this.cardList.innerHTML = ""; // Clear existing cards
+        for(const book of model.getBooks()) {
+            const card = this.createCard(book);
+            this.cardList.appendChild(card);
+        }
     }
 
     onSidebarBtn(handler) {
@@ -105,6 +165,7 @@ class Controller {
         this.view.onAddBookFormSubmit(this.handleAddBookFormSubmit.bind(this));
 
         //Add Listeners
+        this.model.addListener(this.view.renderCards.bind(this.view))
     }
 
     //Controller methods

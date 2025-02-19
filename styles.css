@@ -180,7 +180,7 @@ body {
   margin: 2rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
+  gap: 1rem;
 }
 
 .card {
@@ -214,6 +214,8 @@ body {
 
 .card__review-btn {
   grid-column: span 2;
+  border: black 1px solid;
+  text-align: center;
 }
 
 .add-modal {
