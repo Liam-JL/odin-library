@@ -44,6 +44,11 @@ class Model {
         return [...this.#books];
     }
 
+    removeBook(i){
+        this.#books.splice(i);
+        this.#notifyListeners();
+    }
+
 }
 
 class View {
@@ -58,6 +63,8 @@ class View {
         this.addBookForm = document.getElementById("addBookForm");
         this.formInputFields = document.querySelectorAll(".add-modal__form-input");
         this.cardList = document.getElementById("cardList");
+        this.deleteBooksBtn = document.getElementById("deleteBooksBtn");
+        this.deleteModal = document.getElementById("deleteModal");
     }
 
     //Create DOM object for static rendering
@@ -131,6 +138,7 @@ class View {
         }
     }
 
+
     onSidebarBtn(handler) {
         this.sidebarBtn.addEventListener("click", handler);
     }
@@ -150,6 +158,10 @@ class View {
     onAddBookFormSubmit(handler) {
         this.addBookForm.addEventListener("submit", handler);
     }
+
+    onDeleteBooksBtn(handler) {
+        this.deleteBooksBtn.addEventListener("click", handler);
+    }
 }
 
 class Controller {
@@ -163,6 +175,7 @@ class Controller {
         this.view.onAddBooksBtn(this.handleAddBooksBtn.bind(this));
         this.view.onAddModalCloseBtn(this.handleAddModalCloseBtn.bind(this));
         this.view.onAddBookFormSubmit(this.handleAddBookFormSubmit.bind(this));
+        this.view.onDeleteBooksBtn(this.handleDeleteBooksBtn.bind(this));
 
         //Add Listeners
         this.model.addListener(this.view.renderCards.bind(this.view))
@@ -195,6 +208,11 @@ class Controller {
         this.view.addModal.close();
     }
 
+    handleDeleteBooksBtn() {
+        this.view.deleteModal.showModal()
+        //Give books unique ID
+        //Delete books through unique ID
+    }
 }
 
 const appModel = new Model();
