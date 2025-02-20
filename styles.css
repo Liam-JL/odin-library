@@ -181,6 +181,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  overflow: auto;
 }
 
 .card {
@@ -285,6 +286,29 @@ body {
   width: 100%;
 }
 
+.delete-modal {
+  margin: auto; 
+  border: 0;
+  box-shadow: 0 0 1em rgb(0 0 0 / .3);
+  border-radius: 10px;
+}
+
+.delete-modal__content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.delete-modal__header {
+  font-weight: bold;
+  font-size: 1.2rem;
+  grid-column: span 3;
+  text-align: center;
+}
+
+
+
 /* Add in media query for mobile view */
 @media (max-width: 768px) {
 
@@ -341,6 +365,13 @@ body {
 
   .add-modal__form * {
     grid-column: span 1;
+  }
+
+}
+
+@media (max-width: 844px) {
+  .main__card-list {
+    grid-template-columns: 1fr 1fr;
   }
 
 }
